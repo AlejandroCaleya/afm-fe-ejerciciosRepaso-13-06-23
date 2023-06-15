@@ -1,22 +1,51 @@
-let element = document.createElement("div");
-element.style.height = "20vh";
-element.style.width = "20vw";
-element.style.backgroundColor = "green";
-document.body.appendChild(element);
+let bdy = $("<div></div>").css("display", "flex").appendTo("body");
+let bigImg = $("<div></div>").appendTo(bdy);
+let images = $("<div></div>").appendTo(bdy).css("display", "flex");
+let imagesSub1 = $("<div></div>").appendTo(images);
+let imagesSub2 = $("<div></div>").appendTo(images);
 
-let space = document.createElement("br");
-document.body.appendChild(space);
+var imgShow = $("<div></div>")
+	.css({
+		backgroundImage: "url(/imgs/img5.jpg)",
+		width: "400px",
+		height: "400px",
+		backgroundSize: "cover",
+		marginRight: "20px",
+	})
+	.appendTo(bigImg);
 
-let btn = document.createElement("button");
-btn.textContent = "Button";
-document.body.appendChild(btn);
+var img1 = $("<div></div>")
+	.css({
+		backgroundImage: "url(/imgs/img1.jpg)",
+		width: "200px",
+		height: "200px",
+		backgroundSize: "cover",
+	})
+	.appendTo(imagesSub1);
 
-btn.addEventListener("click", showHide);
+var img2 = $("<div></div>")
+	.css({
+		backgroundImage: "url(/imgs/img2.jpg)",
+		width: "200px",
+		height: "200px",
+		backgroundSize: "cover",
+	})
+	.appendTo(imagesSub1);
 
-function showHide() {
-	if (element.style.visibility == "hidden") {
-		element.style.visibility = "visible";
-	} else {
-		element.style.visibility = "hidden";
-	}
-}
+var img3 = $("<div></div>")
+	.css({
+		backgroundImage: "url(/imgs/img3.jpg)",
+		width: "200px",
+		height: "200px",
+		backgroundSize: "cover",
+	})
+	.appendTo(imagesSub2);
+
+var img4 = $("<div></div>")
+	.css({
+		backgroundImage: "url(/imgs/img4.jpg)",
+		width: "200px",
+		height: "200px",
+		backgroundSize: "cover",
+	})
+	.appendTo(imagesSub2);
