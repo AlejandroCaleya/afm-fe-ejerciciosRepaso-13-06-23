@@ -21,7 +21,8 @@ var img1 = $("<div></div>")
 		height: "200px",
 		backgroundSize: "cover",
 	})
-	.appendTo(imagesSub1);
+	.appendTo(imagesSub1)
+	.on("click", () => swap(img1));
 
 var img2 = $("<div></div>")
 	.css({
@@ -30,7 +31,8 @@ var img2 = $("<div></div>")
 		height: "200px",
 		backgroundSize: "cover",
 	})
-	.appendTo(imagesSub1);
+	.appendTo(imagesSub1)
+	.on("click", () => swap(img2));
 
 var img3 = $("<div></div>")
 	.css({
@@ -39,7 +41,8 @@ var img3 = $("<div></div>")
 		height: "200px",
 		backgroundSize: "cover",
 	})
-	.appendTo(imagesSub2);
+	.appendTo(imagesSub2)
+	.on("click", () => swap(img3));
 
 var img4 = $("<div></div>")
 	.css({
@@ -48,4 +51,11 @@ var img4 = $("<div></div>")
 		height: "200px",
 		backgroundSize: "cover",
 	})
-	.appendTo(imagesSub2);
+	.appendTo(imagesSub2)
+	.on("click", () => swap(img4));
+
+function swap(urlSwap) {
+	let link = imgShow.css("backgroundImage");
+	imgShow.css("backgroundImage", urlSwap.css("backgroundImage"));
+	urlSwap.css("backgroundImage", link);
+}
